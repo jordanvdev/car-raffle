@@ -7,4 +7,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\car-raffle-datalayer\car-raffle-datalayer.csproj" />
+      <ProjectReference Include="..\car-raffle-model\car-raffle-model.csproj" />
+    </ItemGroup>
+
 </Project>
