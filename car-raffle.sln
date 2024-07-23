@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-api", "car-raffle-api\car-raffle-api.csproj", "{320A5532-C3D1-4A05-99DB-5054D30AD7DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-datalayer", "car-raffle-datalayer\car-raffle-datalayer.csproj", "{09C928C4-4E8F-41FC-B7D9-DBA5B5FA42DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-model", "car-raffle-model\car-raffle-model.csproj", "{F506B611-5370-4512-8888-EC5767A0D2ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-services", "car-raffle-services\car-raffle-services.csproj", "{3A15FC78-1AB8-4FF0-878D-3D38C89F720F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-unittests", "car-raffle-unittests\car-raffle-unittests.csproj", "{B6BCC8D3-DC89-4D18-B589-EC0683509DBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{320A5532-C3D1-4A05-99DB-5054D30AD7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{320A5532-C3D1-4A05-99DB-5054D30AD7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{320A5532-C3D1-4A05-99DB-5054D30AD7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{320A5532-C3D1-4A05-99DB-5054D30AD7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09C928C4-4E8F-41FC-B7D9-DBA5B5FA42DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09C928C4-4E8F-41FC-B7D9-DBA5B5FA42DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09C928C4-4E8F-41FC-B7D9-DBA5B5FA42DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09C928C4-4E8F-41FC-B7D9-DBA5B5FA42DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F506B611-5370-4512-8888-EC5767A0D2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F506B611-5370-4512-8888-EC5767A0D2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F506B611-5370-4512-8888-EC5767A0D2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F506B611-5370-4512-8888-EC5767A0D2ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A15FC78-1AB8-4FF0-878D-3D38C89F720F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A15FC78-1AB8-4FF0-878D-3D38C89F720F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A15FC78-1AB8-4FF0-878D-3D38C89F720F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A15FC78-1AB8-4FF0-878D-3D38C89F720F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6BCC8D3-DC89-4D18-B589-EC0683509DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BCC8D3-DC89-4D18-B589-EC0683509DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BCC8D3-DC89-4D18-B589-EC0683509DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BCC8D3-DC89-4D18-B589-EC0683509DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
