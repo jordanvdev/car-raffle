@@ -15,7 +15,7 @@ public class GetAllListingTests
     public void SetUp()
     {
         _mockListingRepository = new Mock<IListingRepository>();
-        _listingService = new ListingService(_mockListingRepository.Object);
+        _listingService = new ListingService(_mockListingRepository.Object,null);
     }
     
     [Test]
@@ -28,10 +28,10 @@ public class GetAllListingTests
             new Listing { Id = Guid.NewGuid() }
         };
 
-        _mockListingRepository.Setup(repo => repo.GetAllListings()).ReturnsAsync(listings);
+        _mockListingRepository.Setup(repo => repo.GetAllListingsAsync()).ReturnsAsync(listings);
 
         // Act
-        var result = await _listingService.GetAllListings();
+        var result = await _listingService.GetAllListingsAsync();
 
         // Assert
         Assert.IsNotNull(result);
