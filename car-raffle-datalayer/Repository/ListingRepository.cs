@@ -13,8 +13,14 @@ public class ListingRepository : IListingRepository
         _context = context;
     }
 
-    public async Task<List<Listing>> GetAllListings()
+    public async Task<List<Listing>> GetAllListingsAsync()
     {
         return await _context.Listings.ToListAsync();
+    }
+    
+    public async Task<int> CreateListingAsync(Listing listing)
+    {
+        await _context.Listings.AddAsync(listing);
+        return await _context.SaveChangesAsync();
     }
 }
