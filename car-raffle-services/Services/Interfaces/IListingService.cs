@@ -1,10 +1,12 @@
 using car_raffle_model;
 using car_raffle_model.API_Models;
+using car_raffle_model.Endpoint_Response;
 
 namespace car_raffle_services.Interfaces;
 
 public interface IListingService
 {
-    Task<List<Listing>> GetAllListingsAsync();
-    Task<bool> CreateListing(ListingRequest listingRequest);
+    Task<HttpResult<List<ListingResponse>>> GetAllListingsAsync();
+    Task<HttpResult<bool>> CreateListingAsync(ListingRequest listingRequest);
+    Task<HttpResult<bool>> ReviewListingAsync(Guid listingId, bool isApproved);
 }

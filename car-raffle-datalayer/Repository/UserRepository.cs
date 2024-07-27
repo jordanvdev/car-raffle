@@ -13,7 +13,7 @@ public class UserRepository : IUserRepository
         _context = context;
     }
     
-    public async Task<User> GetUserByIdAsync(Guid userId)
+    public async Task<User?> GetUserByIdAsync(Guid userId)
     {
         return await _context.Users.FirstOrDefaultAsync(a => a.Id == userId);
     }
