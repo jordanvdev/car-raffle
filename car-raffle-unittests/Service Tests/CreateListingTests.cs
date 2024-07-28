@@ -1,3 +1,5 @@
+using System.Net;
+using car_raffle_datalayer.Repository.Interfaces;
 using car_raffle_model;
 using car_raffle_model.API_Models;
 using car_raffle_services.Interfaces;
@@ -35,10 +37,11 @@ public class CreateListingTests
         };
 
         // Act
-        var result = await _listingService.CreateListing(listingRequest);
+        var result = await _listingService.CreateListingAsync(listingRequest);
 
         // Assert
-        Assert.That(result, Is.False);
+        Assert.That(result.Result, Is.False);
+        Assert.That(result.StatusCode, Is.EqualTo(HttpStatusCode.Forbidden));
     }
     
     [Test]
@@ -57,11 +60,11 @@ public class CreateListingTests
         };
 
         // Act
-        var result = await _listingService.CreateListing(listingRequest);
+        var result = await _listingService.CreateListingAsync(listingRequest);
 
         // Assert
         _mockUserRepository.Verify(a => a.GetUserByIdAsync(It.IsAny<Guid>()), Times.Once);
         _mockListingRepository.Verify(a => a.CreateListingAsync(It.IsAny<Listing>()),Times.Once);
-        Assert.That(result, Is.True);
+        Assert.That(result.Result, Is.True);
     }
 }

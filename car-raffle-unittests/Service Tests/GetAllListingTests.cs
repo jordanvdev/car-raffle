@@ -1,3 +1,4 @@
+using car_raffle_datalayer.Repository.Interfaces;
 using car_raffle_model;
 using car_raffle_services.Interfaces;
 using car_raffle_services.Services;
@@ -24,8 +25,8 @@ public class GetAllListingTests
         // Arrange
         var listings = new List<Listing>
         {
-            new Listing { Id = Guid.NewGuid() },
-            new Listing { Id = Guid.NewGuid() }
+            new() { Id = Guid.NewGuid(), Car = new Car(), User = new User()},
+            new() { Id = Guid.NewGuid(), Car = new Car() , User = new User()}
         };
 
         _mockListingRepository.Setup(repo => repo.GetAllListingsAsync()).ReturnsAsync(listings);
@@ -35,6 +36,6 @@ public class GetAllListingTests
 
         // Assert
         Assert.IsNotNull(result);
-        Assert.AreEqual(2, result.Count);
+        Assert.That(result.Result.Count, Is.EqualTo(2));
     }
 }

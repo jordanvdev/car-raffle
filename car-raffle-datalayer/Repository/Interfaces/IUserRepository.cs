@@ -4,5 +4,5 @@ namespace Tarkov_Info_DataLayer.Repository.Interfaces;
 
 public interface IUserRepository
 {
-    Task<User> GetUserByIdAsync(Guid userId);
+    Task<User?> GetUserByIdAsync(Guid userId);
 }

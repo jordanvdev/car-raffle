@@ -1,3 +1,4 @@
+using car_raffle_datalayer.Repository.Interfaces;
 using car_raffle_model;
 using Microsoft.EntityFrameworkCore;
 using Tarkov_Info_DataLayer.Repository.Interfaces;
@@ -17,10 +18,21 @@ public class ListingRepository : IListingRepository
     {
         return await _context.Listings.ToListAsync();
     }
-    
+
+    public async Task<Listing?> GetListingById(Guid listingId)
+    {
+        return await _context.Listings.FirstOrDefaultAsync(a => a.Id == listingId);
+    }
+
     public async Task<int> CreateListingAsync(Listing listing)
     {
         await _context.Listings.AddAsync(listing);
+        return await _context.SaveChangesAsync();
+    }
+
+    public async Task<int> ReviewListingAsync(Listing listing, bool isApproved)
+    {
+        listing.IsApproved = isApproved;
         return await _context.SaveChangesAsync();
     }
 }
