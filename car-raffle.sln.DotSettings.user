@@ -8,5 +8,8 @@
     &lt;TestId&gt;NUnit3x::B6BCC8D3-DC89-4D18-B589-EC0683509DBA::net8.0::car_raffle_unittests.Service_Tests.CreateListingTests.GivenUserNotFound_WhenCreateListingCalled_ThenFalseIsReturned&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::B6BCC8D3-DC89-4D18-B589-EC0683509DBA::net8.0::car_raffle_unittests.Service_Tests.ReviewListingTests.GivenListingIsFound_WhenReviewListingCalled_ThenListingIsUpdated&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::B6BCC8D3-DC89-4D18-B589-EC0683509DBA::net8.0::car_raffle_unittests.Service_Tests.ReviewListingTests.GivenListingNotFound_WhenReviewListingCalled_ThenBadRequestReturned&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B6BCC8D3-DC89-4D18-B589-EC0683509DBA::net8.0::car_raffle_unittests.Service_Tests.ReviewListingTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B6BCC8D3-DC89-4D18-B589-EC0683509DBA::net8.0::car_raffle_unittests.Service_Tests.CreateListingTests.GivenValidationOnRequestObjectFailed_WhenCreateListingCalled_ThenBadRequestReturned&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::B6BCC8D3-DC89-4D18-B589-EC0683509DBA::net8.0::car_raffle_unittests.Service_Tests.CreateListingTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

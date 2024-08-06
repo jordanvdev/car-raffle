@@ -3,6 +3,7 @@ using car_raffle_model;
 using car_raffle_model.API_Models;
 using car_raffle_model.Endpoint_Response;
 using car_raffle_services.Interfaces;
+using FluentValidation;
 using Tarkov_Info_DataLayer.Repository.Interfaces;
 
 namespace car_raffle_services.Services;
@@ -11,11 +12,13 @@ public class ListingService : IListingService
 {
     private readonly IListingRepository _listingRepository;
     private readonly IUserRepository _userRepository;
+    private readonly IValidator<ListingRequest> _validator;
 
-    public ListingService(IListingRepository listingRepository, IUserRepository userRepository)
+    public ListingService(IListingRepository listingRepository, IUserRepository userRepository, IValidator<ListingRequest> validator)
     {
         _listingRepository = listingRepository;
         _userRepository = userRepository;
+        _validator = validator;
     }
 
     public async Task<HttpResult<List<ListingResponse>>> GetAllListingsAsync()
@@ -27,6 +30,10 @@ public class ListingService : IListingService
 
     public async Task<HttpResult<bool>> CreateListingAsync(ListingRequest listingRequest)
     {
+        var validationResult = await _validator.ValidateAsync(listingRequest);
+        if(!validationResult.IsValid)
+            return HttpResult<bool>.BadRequest(validationResult.Errors.Select(error => error.ErrorMessage).ToString()!);
+        
         var user = await _userRepository.GetUserByIdAsync(listingRequest.UserId);
         if (user == null)
             return HttpResult<bool>.Forbidden($"User {listingRequest.UserId} not found");

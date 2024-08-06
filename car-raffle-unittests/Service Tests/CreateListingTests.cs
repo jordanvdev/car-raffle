@@ -4,6 +4,8 @@ using car_raffle_model;
 using car_raffle_model.API_Models;
 using car_raffle_services.Interfaces;
 using car_raffle_services.Services;
+using FluentValidation;
+using FluentValidation.Results;
 using Moq;
 using Tarkov_Info_DataLayer.Repository.Interfaces;
 
@@ -14,13 +16,41 @@ public class CreateListingTests
     private Mock<IListingRepository> _mockListingRepository;
     private Mock<IUserRepository> _mockUserRepository;
     private IListingService _listingService;
+    private Mock<IValidator<ListingRequest>> _mockValidator;
 
     [SetUp]
     public void SetUp()
     {
         _mockListingRepository = new Mock<IListingRepository>();
         _mockUserRepository = new Mock<IUserRepository>();
-        _listingService = new ListingService(_mockListingRepository.Object,_mockUserRepository.Object);
+        _mockValidator = new Mock<IValidator<ListingRequest>>();
+        _listingService = new ListingService(_mockListingRepository.Object,_mockUserRepository.Object, _mockValidator.Object);
+    }
+    
+    [Test]
+    public async Task GivenValidationOnRequestObjectFailed_WhenCreateListingCalled_ThenBadRequestReturned()
+    {
+        // Arrange
+        var failures = new List<ValidationFailure>
+        {
+            new ValidationFailure("Make", "Error")
+        };
+        _mockValidator.Setup(a => a.ValidateAsync(It.IsAny<ListingRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(new ValidationResult(){Errors = failures});
+        _mockUserRepository.Setup(a => a.GetUserByIdAsync(It.IsAny<Guid>())).ReturnsAsync(null as User);
+
+        var listingRequest = new ListingRequest()
+        {
+            Make = "Ford",
+            Model = "Fiesta",
+            Color = "Black"
+        };
+
+        // Act
+        var result = await _listingService.CreateListingAsync(listingRequest);
+
+        // Assert
+        Assert.That(result.Result, Is.False);
+        Assert.That(result.StatusCode, Is.EqualTo(HttpStatusCode.BadRequest));
     }
     
     [Test]
@@ -28,6 +58,7 @@ public class CreateListingTests
     {
         // Arrange
         _mockUserRepository.Setup(a => a.GetUserByIdAsync(It.IsAny<Guid>())).ReturnsAsync(null as User);
+        _mockValidator.Setup(a => a.ValidateAsync(It.IsAny<ListingRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(new ValidationResult(){ Errors = new List<ValidationFailure>()});
 
         var listingRequest = new ListingRequest()
         {
@@ -49,6 +80,7 @@ public class CreateListingTests
     {
         // Arrange
         _mockUserRepository.Setup(a => a.GetUserByIdAsync(It.IsAny<Guid>())).ReturnsAsync(new User());
+        _mockValidator.Setup(a => a.ValidateAsync(It.IsAny<ListingRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(new ValidationResult(){ Errors = new List<ValidationFailure>()});
 
         var listingRequest = new ListingRequest()
         {
