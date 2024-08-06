@@ -20,7 +20,7 @@ public class ReviewListingTests
     {
         _mockListingRepository = new Mock<IListingRepository>();
         _mockUserRepository = new Mock<IUserRepository>();
-        _listingService = new ListingService(_mockListingRepository.Object,_mockUserRepository.Object);
+        _listingService = new ListingService(_mockListingRepository.Object,_mockUserRepository.Object, null);
     }
     
     [Test]

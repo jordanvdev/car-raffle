@@ -16,7 +16,7 @@ public class GetAllListingTests
     public void SetUp()
     {
         _mockListingRepository = new Mock<IListingRepository>();
-        _listingService = new ListingService(_mockListingRepository.Object,null);
+        _listingService = new ListingService(_mockListingRepository.Object,null, null);
     }
     
     [Test]
