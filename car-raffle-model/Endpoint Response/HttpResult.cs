@@ -2,10 +2,11 @@ using System.Net;
 
 namespace car_raffle_model.Endpoint_Response;
 
-public class HttpResult<T> : IHttpResult<T>
+public class HttpResult<T> : IHttpResult
 {
     public HttpStatusCode StatusCode { get; set; }
     public T Result { get; set; }
+    object IHttpResult.Result => Result;
     public string? Error { get; set; }
 
     public HttpResult()
