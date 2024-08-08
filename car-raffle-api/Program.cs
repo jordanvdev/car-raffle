@@ -1,6 +1,10 @@
+using car_raffle_datalayer.Repository;
 using car_raffle_datalayer.Repository.Interfaces;
 using car_raffle_services.Interfaces;
 using car_raffle_services.Services;
+using car_raffle_services.Validators;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Tarkov_Info_DataLayer;
 using Tarkov_Info_DataLayer.Repository;
@@ -15,7 +19,13 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<RaffleContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("RaffleDatabase")));
+builder.Services.AddDbContext<RaffleContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RaffleDatabase"));
+});
+
+builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ListingRequestValidator>());
+
 
 builder.Services.AddScoped<IListingService, ListingService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();

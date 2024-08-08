@@ -1,9 +1,9 @@
 using car_raffle_datalayer.Repository.Interfaces;
 using car_raffle_model;
 using Microsoft.EntityFrameworkCore;
-using Tarkov_Info_DataLayer.Repository.Interfaces;
+using Tarkov_Info_DataLayer;
 
-namespace Tarkov_Info_DataLayer.Repository;
+namespace car_raffle_datalayer.Repository;
 
 public class ListingRepository : IListingRepository
 {
@@ -16,12 +16,27 @@ public class ListingRepository : IListingRepository
 
     public async Task<List<Listing>> GetAllListingsAsync()
     {
-        return await _context.Listings.ToListAsync();
+        return await _context.Listings
+            .Include(a => a.Car)
+            .Include(a => a.User)
+            .ToListAsync();
+    }
+
+    public async Task<List<Listing>> GetAllActiveListingsAsync()
+    {
+        return await _context.Listings
+            .Include(a => a.Car)
+            .Include(a => a.User)
+            .Where(a => a.IsApproved && a.EndDate >= DateTime.Now)
+            .ToListAsync();
     }
 
     public async Task<Listing?> GetListingById(Guid listingId)
     {
-        return await _context.Listings.FirstOrDefaultAsync(a => a.Id == listingId);
+        return await _context.Listings
+            .Include(a => a.Car)
+            .Include(a => a.User)
+            .FirstOrDefaultAsync(a => a.Id == listingId);
     }
 
     public async Task<int> CreateListingAsync(Listing listing)

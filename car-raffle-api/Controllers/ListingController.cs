@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace car_raffle.Controllers;
 
+[HttpResultToActionResultFilter]
 public class ListingController : Controller
 {
     private readonly IListingService _service;
@@ -20,6 +21,13 @@ public class ListingController : Controller
     public async Task<HttpResult<List<ListingResponse>>> GetAllListingsAsync()
     {
         return await _service.GetAllListingsAsync();
+    }
+    
+    [HttpGet]
+    [Route("/api/v1/listings/active")]
+    public async Task<HttpResult<List<ListingResponse>>> GetAllActiveListingsAsync()
+    {
+        return await _service.GetAllActiveListingsAsync();
     }
     
     [HttpPost]

@@ -27,12 +27,19 @@ public class ListingService : IListingService
         var responses = result.Select(a => new ListingResponse(a)).ToList();
         return HttpResult<List<ListingResponse>>.Ok(responses);
     }
+    
+    public async Task<HttpResult<List<ListingResponse>>> GetAllActiveListingsAsync()
+    {
+        var result = await _listingRepository.GetAllActiveListingsAsync();
+        var responses = result.Select(a => new ListingResponse(a)).ToList();
+        return HttpResult<List<ListingResponse>>.Ok(responses);
+    }
 
     public async Task<HttpResult<bool>> CreateListingAsync(ListingRequest listingRequest)
     {
         var validationResult = await _validator.ValidateAsync(listingRequest);
         if(!validationResult.IsValid)
-            return HttpResult<bool>.BadRequest(validationResult.Errors.Select(error => error.ErrorMessage).ToString()!);
+            return HttpResult<bool>.BadRequest(string.Concat(validationResult.Errors.Select(x => x.ErrorMessage).ToList()));
         
         var user = await _userRepository.GetUserByIdAsync(listingRequest.UserId);
         if (user == null)
