@@ -2,7 +2,7 @@ using car_raffle_datalayer.Repository.Interfaces;
 using car_raffle_model;
 using car_raffle_model.API_Models;
 using car_raffle_model.Endpoint_Response;
-using car_raffle_services.Interfaces;
+using car_raffle_services.Services.Interfaces;
 using FluentValidation;
 using Tarkov_Info_DataLayer.Repository.Interfaces;
 
@@ -63,6 +63,18 @@ public class ListingService : IListingService
             return HttpResult<bool>.BadRequest($"Listing {listingId} not found");
         
         await _listingRepository.ReviewListingAsync(listing, isApproved);
+        
+        return HttpResult<bool>.Ok(true);
+    }
+    
+    public async Task<HttpResult<bool>> DeleteListingAsync(Guid listingId)
+    {
+        var listing = await _listingRepository.GetListingById(listingId);
+        
+        if(listing == null)
+            return HttpResult<bool>.BadRequest($"Listing {listingId} not found");
+
+        await _listingRepository.DeleteListingAsync(listing);
         
         return HttpResult<bool>.Ok(true);
     }

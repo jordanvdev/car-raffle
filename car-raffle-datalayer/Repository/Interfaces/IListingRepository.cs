@@ -9,4 +9,5 @@ public interface IListingRepository
     Task<Listing?> GetListingById(Guid listingId);
     Task<int> CreateListingAsync(Listing listing);
     Task<int> ReviewListingAsync(Listing listing, bool isApproved);
+    Task<int> DeleteListingAsync(Listing listing);
 }

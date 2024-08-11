@@ -1,7 +1,7 @@
 using car_raffle_model;
 using car_raffle_model.API_Models;
 using car_raffle_model.Endpoint_Response;
-using car_raffle_services.Interfaces;
+using car_raffle_services.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace car_raffle.Controllers;
@@ -21,6 +21,13 @@ public class ListingController : Controller
     public async Task<HttpResult<List<ListingResponse>>> GetAllListingsAsync()
     {
         return await _service.GetAllListingsAsync();
+    }
+    
+    [HttpDelete]
+    [Route("/api/v1/listings")]
+    public async Task<HttpResult<bool>> DeleteListingAsync(Guid listingId)
+    {
+        return await _service.DeleteListingAsync(listingId);
     }
     
     [HttpGet]

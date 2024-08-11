@@ -6,5 +6,5 @@ public class User
     public string Name { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
-    public virtual List<Listing> Listings { get; set; }
+    public List<Listing> Listings { get; set; }
 }
