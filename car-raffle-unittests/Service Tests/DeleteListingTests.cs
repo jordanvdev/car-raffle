@@ -9,7 +9,7 @@ using Tarkov_Info_DataLayer.Repository.Interfaces;
 
 namespace car_raffle_unittests.Service_Tests;
 
-public class ReviewListingTests
+public class DeleteListingTests
 {
     private Mock<IListingRepository> _mockListingRepository;
     private Mock<IUserRepository> _mockUserRepository;
@@ -24,13 +24,13 @@ public class ReviewListingTests
     }
     
     [Test]
-    public async Task GivenListingNotFound_WhenReviewListingCalled_ThenBadRequestReturned()
+    public async Task GivenListingNotFound_WhenDeleteListingCalled_ThenBadRequestReturned()
     {
         // Arrange
         _mockListingRepository.Setup(a => a.GetListingById(It.IsAny<Guid>())).ReturnsAsync(null as Listing);
         
         // Act
-        var result = await _listingService.ReviewListingAsync(Guid.NewGuid(), true);
+        var result = await _listingService.DeleteListingAsync(Guid.NewGuid());
 
         // Assert
         Assert.That(result.Result, Is.False);
@@ -44,11 +44,11 @@ public class ReviewListingTests
         _mockListingRepository.Setup(a => a.GetListingById(It.IsAny<Guid>())).ReturnsAsync(new Listing());
         
         // Act
-        var result = await _listingService.ReviewListingAsync(Guid.NewGuid(), true);
+        var result = await _listingService.DeleteListingAsync(Guid.NewGuid());
 
         // Assert
         _mockListingRepository.Verify(a => a.GetListingById(It.IsAny<Guid>()),Times.Once);
-        _mockListingRepository.Verify(a => a.ReviewListingAsync(It.IsAny<Listing>(),It.IsAny<bool>()),Times.Once);
+        _mockListingRepository.Verify(a => a.DeleteListingAsync(It.IsAny<Listing>()),Times.Once);
         Assert.That(result.Result, Is.True);
     }
 }

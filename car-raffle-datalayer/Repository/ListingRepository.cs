@@ -50,4 +50,10 @@ public class ListingRepository : IListingRepository
         listing.IsApproved = isApproved;
         return await _context.SaveChangesAsync();
     }
+    
+    public async Task<int> DeleteListingAsync(Listing listing)
+    {
+        _context.Listings.Remove(listing!);
+        return await _context.SaveChangesAsync();
+    }
 }

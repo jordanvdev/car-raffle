@@ -1,7 +1,7 @@
 using car_raffle_datalayer.Repository;
 using car_raffle_datalayer.Repository.Interfaces;
-using car_raffle_services.Interfaces;
 using car_raffle_services.Services;
+using car_raffle_services.Services.Interfaces;
 using car_raffle_services.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
