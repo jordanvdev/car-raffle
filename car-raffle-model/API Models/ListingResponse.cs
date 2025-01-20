@@ -26,6 +26,10 @@ public class ListingResponse
     public DateTime EndDate { get; set; }
     [JsonPropertyName("ticketPrice")]
     public double TicketPrice { get; set; }
+    [JsonPropertyName("currentTicketCount")]
+    public int CurrentTicketCount { get; set; }
+    [JsonPropertyName("maxTicketCount")]
+    public int MaxTicketCount { get; set; }
 
     public ListingResponse()
     {
@@ -45,5 +49,7 @@ public class ListingResponse
         UserId = listing.User.Id;
         CreatedAt = listing.CreatedAt;
         EndDate = listing.EndDate;
+        CurrentTicketCount = listing.CurrentTicketCount;
+        MaxTicketCount = listing.MaxTicketCount;
     }
 }
