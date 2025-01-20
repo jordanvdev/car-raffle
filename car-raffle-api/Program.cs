@@ -3,6 +3,7 @@ using car_raffle_datalayer.Repository.Interfaces;
 using car_raffle_services.Services;
 using car_raffle_services.Services.Interfaces;
 using car_raffle_services.Validators;
+using car_raffle.SignalR.Hub;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
+builder.Services.AddSignalR();
 
 builder.Services.AddDbContext<RaffleContext>(options =>
 {
@@ -43,6 +45,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+app.MapHub<ListingHub>("/listingHub");
 
 app.Run();
 
