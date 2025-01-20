@@ -10,6 +10,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-services", "car-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-unittests", "car-raffle-unittests\car-raffle-unittests.csproj", "{B6BCC8D3-DC89-4D18-B589-EC0683509DBA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "listing", "listing", "{4E2C6389-6A93-4409-B8F3-D2B8AB4A63F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-listing-api", "car-raffle-listing-api\car-raffle-listing-api.csproj", "{99A10C4F-8169-4E4C-B364-B3ADC429237F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-listing-services", "car-raffle-listing-services\car-raffle-listing-services.csproj", "{EA46BAAA-2378-4C2D-9A3D-4606B1599BB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-listing-data", "car-raffle-listing-data\car-raffle-listing-data.csproj", "{C10E2DCC-9393-4E03-B5A4-D4DDC96C7ED9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-gateway", "car-raffle-gateway\car-raffle-gateway.csproj", "{C33A0D81-8F50-4106-851E-311A8AF7D44B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{48702321-6B0D-450B-82FB-A8465DB55CC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "car-raffle-shared", "car-raffle-shared\car-raffle-shared.csproj", "{2E6BBEB9-D0C8-4C2E-AA80-2536E7B90B2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +50,31 @@ Global
 		{B6BCC8D3-DC89-4D18-B589-EC0683509DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6BCC8D3-DC89-4D18-B589-EC0683509DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6BCC8D3-DC89-4D18-B589-EC0683509DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99A10C4F-8169-4E4C-B364-B3ADC429237F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A10C4F-8169-4E4C-B364-B3ADC429237F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A10C4F-8169-4E4C-B364-B3ADC429237F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A10C4F-8169-4E4C-B364-B3ADC429237F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA46BAAA-2378-4C2D-9A3D-4606B1599BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA46BAAA-2378-4C2D-9A3D-4606B1599BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA46BAAA-2378-4C2D-9A3D-4606B1599BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA46BAAA-2378-4C2D-9A3D-4606B1599BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C10E2DCC-9393-4E03-B5A4-D4DDC96C7ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C10E2DCC-9393-4E03-B5A4-D4DDC96C7ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C10E2DCC-9393-4E03-B5A4-D4DDC96C7ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C10E2DCC-9393-4E03-B5A4-D4DDC96C7ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C33A0D81-8F50-4106-851E-311A8AF7D44B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C33A0D81-8F50-4106-851E-311A8AF7D44B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C33A0D81-8F50-4106-851E-311A8AF7D44B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C33A0D81-8F50-4106-851E-311A8AF7D44B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E6BBEB9-D0C8-4C2E-AA80-2536E7B90B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E6BBEB9-D0C8-4C2E-AA80-2536E7B90B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E6BBEB9-D0C8-4C2E-AA80-2536E7B90B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E6BBEB9-D0C8-4C2E-AA80-2536E7B90B2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{99A10C4F-8169-4E4C-B364-B3ADC429237F} = {4E2C6389-6A93-4409-B8F3-D2B8AB4A63F6}
+		{EA46BAAA-2378-4C2D-9A3D-4606B1599BB0} = {4E2C6389-6A93-4409-B8F3-D2B8AB4A63F6}
+		{C10E2DCC-9393-4E03-B5A4-D4DDC96C7ED9} = {4E2C6389-6A93-4409-B8F3-D2B8AB4A63F6}
+		{2E6BBEB9-D0C8-4C2E-AA80-2536E7B90B2F} = {48702321-6B0D-450B-82FB-A8465DB55CC7}
 	EndGlobalSection
 EndGlobal

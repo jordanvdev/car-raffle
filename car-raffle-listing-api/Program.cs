@@ -1,15 +1,11 @@
-using car_raffle_datalayer.Repository;
-using car_raffle_datalayer.Repository.Interfaces;
+using car_raffle_listing_data.Repository;
+using car_raffle_listing_data.Repository.Interfaces;
+using car_raffle_listings_services.Services.Interfaces;
+using car_raffle_listings_services.Validators;
 using car_raffle_services.Services;
-using car_raffle_services.Services.Interfaces;
-using car_raffle_services.Validators;
-using car_raffle.SignalR.Hub;
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Tarkov_Info_DataLayer;
-using Tarkov_Info_DataLayer.Repository;
-using Tarkov_Info_DataLayer.Repository.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,18 +15,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
-builder.Services.AddSignalR();
 
-builder.Services.AddDbContext<RaffleContext>(options =>
+builder.Services.AddDbContext<ListingContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ListingDatabase"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RaffleDatabase"));
 });
 
 builder.Services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ListingRequestValidator>());
 
-
 builder.Services.AddScoped<IListingService, ListingService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IListingRepository, ListingRepository>();
 
 var app = builder.Build();
@@ -46,8 +39,4 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
-app.MapHub<ListingHub>("/listingHub");
-
 app.Run();
-
-
