@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "pbkgEQnavdS97K40s7bCgpU0mR4rse9AZokhkvNaioU=",
+  "Source": "car-raffle-ticket-api",
+  "BasePath": "_content/car-raffle-ticket-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
