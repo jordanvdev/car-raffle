@@ -4,6 +4,64 @@
     "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-api/car-raffle-ticket-api.csproj": {}
   },
   "projects": {
+    "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-shared/car-raffle-shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-shared/car-raffle-shared.csproj",
+        "projectName": "car-raffle-shared",
+        "projectPath": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-shared/car-raffle-shared.csproj",
+        "packagesPath": "/Users/jordansmac/.nuget/packages/",
+        "outputPath": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jordansmac/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-api/car-raffle-ticket-api.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -28,6 +86,9 @@
             "projectReferences": {
               "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-data/car-raffle-ticket-data.csproj": {
                 "projectPath": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-data/car-raffle-ticket-data.csproj"
+              },
+              "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-services/car-raffle-ticket-services.csproj": {
+                "projectPath": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-services/car-raffle-ticket-services.csproj"
               }
             }
           }
@@ -133,6 +194,71 @@
               "version": "[8.0.7, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-services/car-raffle-ticket-services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-services/car-raffle-ticket-services.csproj",
+        "projectName": "car-raffle-ticket-services",
+        "projectPath": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-services/car-raffle-ticket-services.csproj",
+        "packagesPath": "/Users/jordansmac/.nuget/packages/",
+        "outputPath": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-services/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jordansmac/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-shared/car-raffle-shared.csproj": {
+                "projectPath": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-shared/car-raffle-shared.csproj"
+              },
+              "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-data/car-raffle-ticket-data.csproj": {
+                "projectPath": "/Users/jordansmac/RiderProjects/car-raffle/car-raffle-ticket-data/car-raffle-ticket-data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",

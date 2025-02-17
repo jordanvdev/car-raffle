@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("car-raffle-listing-services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92c6751dbba10951dcae8c831cd76ccbd9857f5d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4159d06e2227b70355b9ecfb857dea307cb8813d")]
 [assembly: System.Reflection.AssemblyProductAttribute("car-raffle-listing-services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("car-raffle-listing-services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

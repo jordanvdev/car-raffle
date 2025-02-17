@@ -11,7 +11,8 @@
           "Microsoft.AspNetCore.OpenApi": "8.0.6",
           "Microsoft.EntityFrameworkCore.Design": "8.0.7",
           "Swashbuckle.AspNetCore": "6.4.0",
-          "car-raffle-ticket-data": "1.0.0"
+          "car-raffle-ticket-data": "1.0.0",
+          "car-raffle-ticket-services": "1.0.0"
         },
         "runtime": {
           "car-raffle-ticket-api.dll": {}
@@ -917,6 +918,11 @@
           }
         }
       },
+      "car-raffle-shared/1.0.0": {
+        "runtime": {
+          "car-raffle-shared.dll": {}
+        }
+      },
       "car-raffle-ticket-data/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.7",
@@ -924,6 +930,15 @@
         },
         "runtime": {
           "car-raffle-ticket-data.dll": {}
+        }
+      },
+      "car-raffle-ticket-services/1.0.0": {
+        "dependencies": {
+          "car-raffle-shared": "1.0.0",
+          "car-raffle-ticket-data": "1.0.0"
+        },
+        "runtime": {
+          "car-raffle-ticket-services.dll": {}
         }
       }
     }
@@ -1508,7 +1523,17 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
+    "car-raffle-shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "car-raffle-ticket-data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "car-raffle-ticket-services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

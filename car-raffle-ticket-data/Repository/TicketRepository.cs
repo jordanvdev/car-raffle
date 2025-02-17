@@ -1,7 +1,8 @@
-using car_raffle_listing_data.EF_Models;
-using car_raffle_ticket_data.Repository;
+using car_raffle_ticket_data.EF_Models;
+using Microsoft.EntityFrameworkCore;
+using Tarkov_Info_DataLayer;
 
-namespace Tarkov_Info_DataLayer.Repository;
+namespace car_raffle_ticket_data.Repository;
 
 public class TicketRepository : ITicketRepository
 {
@@ -16,5 +17,10 @@ public class TicketRepository : ITicketRepository
     {
         await _context.Tickets.AddAsync(ticket);
         return await _context.SaveChangesAsync() > 0;
+    }
+
+    public Task<List<Ticket>> GetAllTicketsByListingIdAsync(Guid listingId)
+    {
+        return _context.Tickets.Where(a => a.ListingId == listingId).ToListAsync();
     }
 }

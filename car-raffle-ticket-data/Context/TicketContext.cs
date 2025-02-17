@@ -1,5 +1,4 @@
-﻿using car_raffle_listing_data.EF_Models;
-
+﻿using car_raffle_ticket_data.EF_Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Tarkov_Info_DataLayer;

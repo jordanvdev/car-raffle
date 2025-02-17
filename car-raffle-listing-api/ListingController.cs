@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace car_raffle_listings_api;
 
+[HttpResultToActionResultFilter]
 public class ListingController
 {
     private readonly IListingService _service;

@@ -18,6 +18,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\car-raffle-ticket-data\car-raffle-ticket-data.csproj" />
+      <ProjectReference Include="..\car-raffle-ticket-services\car-raffle-ticket-services.csproj" />
     </ItemGroup>
 
 </Project>
