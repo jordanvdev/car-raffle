@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>car_raffle_user_services</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\car-raffle-shared\car-raffle-shared.csproj" />
+      <ProjectReference Include="..\car-raffle-user-data\car-raffle-user-data.csproj" />
+    </ItemGroup>
+
+</Project>

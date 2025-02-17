@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "XjKXHCpF65qc8mgnBmeQV+Dg585S3SMNVQdqqIw8cWY=",
+  "Source": "car-raffle-user-api",
+  "BasePath": "_content/car-raffle-user-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

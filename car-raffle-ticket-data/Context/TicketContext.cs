@@ -1,7 +1,7 @@
 ﻿using car_raffle_ticket_data.EF_Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Tarkov_Info_DataLayer;
+namespace car_raffle_ticket_data.Context;
 public class TicketContext : DbContext
 {
     public TicketContext()

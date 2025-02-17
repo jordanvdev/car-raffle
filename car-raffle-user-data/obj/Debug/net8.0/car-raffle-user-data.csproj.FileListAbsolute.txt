@@ -1,0 +1,13 @@
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/bin/Debug/net8.0/car-raffle-user-data.deps.json
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/bin/Debug/net8.0/car-raffle-user-data.dll
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/bin/Debug/net8.0/car-raffle-user-data.pdb
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/car-raffle-user-data.csproj.AssemblyReference.cache
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/car-raffle-user-data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/car-raffle-user-data.AssemblyInfoInputs.cache
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/car-raffle-user-data.AssemblyInfo.cs
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/car-raffle-user-data.csproj.CoreCompileInputs.cache
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/car-raffle-user-data.sourcelink.json
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/car-raffle-user-data.dll
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/refint/car-raffle-user-data.dll
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/car-raffle-user-data.pdb
+/Users/jordansmac/RiderProjects/car-raffle/car-raffle-user-data/obj/Debug/net8.0/ref/car-raffle-user-data.dll

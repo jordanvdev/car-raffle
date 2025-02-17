@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("car-raffle-ticket-data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4159d06e2227b70355b9ecfb857dea307cb8813d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a668451801e3fd3406d590fe02ea87bfb354d8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("car-raffle-ticket-data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("car-raffle-ticket-data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
