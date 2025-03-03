@@ -6,4 +6,5 @@ namespace car_raffle_listings_services.Services.Interfaces;
 public interface IListingService
 {
     Task<HttpResult<List<ListingResponse>>> GetAllListingsAsync();
+    Task<HttpResult<ListingResponse>> GetListingByIdAsync(Guid listingId);
 }

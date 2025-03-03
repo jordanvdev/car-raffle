@@ -1,14 +1,3 @@
 .idea/.idea.car-raffle
-car-raffle-api/bin
-car-raffle-api/obj
-car-raffle-datalayer/bin
-car-raffle-datalayer/obj
-car-raffle-model/bin
-car-raffle-model/obj
-car-raffle-services/bin
-car-raffle-services/obj
-car-raffle-unittests/bin
-car-raffle-unittests/obj
-car-raffle-api/.idea
-car-raffle-api/appsettings.json
-car-raffle-api/appsettings.Development.json
+**/bin/
+**/obj/

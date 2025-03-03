@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/car-raffle-gateway.props" />
-</Project>

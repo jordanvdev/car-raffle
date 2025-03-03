@@ -5,5 +5,6 @@ namespace car_raffle_listing_data.Repository.Interfaces;
 
 public interface IListingRepository
 {
-    Task<List<Listing>> GetAllListingsAsync();
+    Task<List<Listing?>> GetAllListingsAsync();
+    Task<Listing?> GetListingByIdAsync(Guid listingId);
 }

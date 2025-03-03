@@ -13,6 +13,18 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
+      "DownstreamPathTemplate": "/api/v1/listings/{listingId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5261
+        }
+      ],
+      "UpstreamPathTemplate": "/listings/{listingId}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/v1/tickets/{listingId}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [

@@ -8,10 +8,12 @@ namespace car_raffle_ticket_services.Services;
 public class TicketService : ITicketService
 {
     private readonly ITicketRepository _ticketRepository;
-    
-    public TicketService(ITicketRepository ticketRepository)
+    private readonly IListingHttpService _listingHttpService;
+
+    public TicketService(ITicketRepository ticketRepository, IListingHttpService listingHttpService)
     {
         _ticketRepository = ticketRepository;
+        _listingHttpService = listingHttpService;
     }
     
     public async Task<HttpResult<bool>> AddTicketAsync(Guid listingId, Guid userId)

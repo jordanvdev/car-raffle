@@ -14,9 +14,15 @@ public class ListingRepository : IListingRepository
         _context = context;
     }
 
-    public async Task<List<Listing>> GetAllListingsAsync()
+    public async Task<List<Listing?>> GetAllListingsAsync()
     {
         return await _context.Listings
             .ToListAsync();
+    }
+    
+    public async Task<Listing?> GetListingByIdAsync(Guid listingId)
+    {
+        return await _context.Listings
+            .FirstOrDefaultAsync(a => a.Id == listingId);
     }
 }

@@ -4,7 +4,7 @@ using car_raffle_listings_services.Services.Interfaces;
 using car_raffle_model.Endpoint_Response;
 using FluentValidation;
 
-namespace car_raffle_services.Services;
+namespace car_raffle_listings_services.Services;
 
 public class ListingService : IListingService
 {
@@ -22,5 +22,11 @@ public class ListingService : IListingService
         var result = await _listingRepository.GetAllListingsAsync();
         var responses = result.Select(a => new ListingResponse(a)).ToList();
         return HttpResult<List<ListingResponse>>.Ok(responses);
+    }
+    
+    public async Task<HttpResult<ListingResponse>> GetListingByIdAsync(Guid listingId)
+    {
+        var result = await _listingRepository.GetListingByIdAsync(listingId);
+        return result == null ? HttpResult<ListingResponse>.NotFound("Listing not found") : HttpResult<ListingResponse>.Ok(new ListingResponse(result));
     }
 }
