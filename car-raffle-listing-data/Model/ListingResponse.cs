@@ -41,7 +41,6 @@ public class ListingResponse
     {
         Id = listing.Id;
         CreatedAt = listing.CreatedAt;
-        EndDate = listing.EndDate;
         CurrentTicketCount = listing.CurrentTicketCount;
         MaxTicketCount = listing.MaxTicketCount;
     }

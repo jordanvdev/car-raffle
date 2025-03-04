@@ -24,6 +24,8 @@
       "UpstreamPathTemplate": "/listings/{listingId}",
       "UpstreamHttpMethod": [ "Get" ]
     },
+    
+    
     {
       "DownstreamPathTemplate": "/api/v1/tickets/{listingId}",
       "DownstreamScheme": "http",
@@ -36,6 +38,21 @@
       "UpstreamPathTemplate": "/tickets/{listingId}",
       "UpstreamHttpMethod": [ "Get" ]
     },
+    {
+      "DownstreamPathTemplate": "/api/v1/tickets",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5044
+        }
+      ],
+      "UpstreamPathTemplate": "/tickets/",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    
+    
+    
     {
       "DownstreamPathTemplate": "/api/v1/users/{userId}",
       "DownstreamScheme": "http",

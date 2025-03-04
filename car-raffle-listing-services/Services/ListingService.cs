@@ -27,6 +27,14 @@ public class ListingService : IListingService
     public async Task<HttpResult<ListingResponse>> GetListingByIdAsync(Guid listingId)
     {
         var result = await _listingRepository.GetListingByIdAsync(listingId);
-        return result == null ? HttpResult<ListingResponse>.NotFound("Listing not found") : HttpResult<ListingResponse>.Ok(new ListingResponse(result));
+        if (result == null)
+            return HttpResult<ListingResponse>.NotFound("Listing not found");
+
+        var response = new ListingResponse()
+        {
+            Id = result.Id,
+        };
+        
+        return HttpResult<ListingResponse>.Ok(response);
     }
 }
