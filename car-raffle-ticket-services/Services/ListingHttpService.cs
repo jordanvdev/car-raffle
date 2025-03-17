@@ -20,7 +20,8 @@ public class ListingHttpService : IListingHttpService
     {
         var url = _listingUrl + "/api/v1/listings/" + listingId;
         var response = await _httpClient.GetAsync(url);
+        var content = await response.Content.ReadAsStringAsync();
         
-        return response.IsSuccessStatusCode ? JsonSerializer.Deserialize<ListingResponse>(response.Content.ToString()!) : null;
+        return response.IsSuccessStatusCode ? JsonSerializer.Deserialize<ListingResponse>(content) : null;
     }
 }

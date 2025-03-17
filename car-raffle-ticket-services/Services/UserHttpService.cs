@@ -9,7 +9,7 @@ public class UserHttpService : IUserHttpService
     private readonly HttpClient _httpClient;
 
     //temp
-    private string _userUrl = "http://localhost:5020";
+    private string _userUrl = "http://localhost:5029";
 
     public UserHttpService(HttpClient httpClient)
     {
@@ -21,6 +21,6 @@ public class UserHttpService : IUserHttpService
         var url = _userUrl + "/api/v1/users/" + userId;
         var response = await _httpClient.GetAsync(url);
         
-        return response.IsSuccessStatusCode ? JsonSerializer.Deserialize<UserResponse>(response.Content.ToString()!) : null;
+        return response.IsSuccessStatusCode ? JsonSerializer.Deserialize<UserResponse>(await response.Content.ReadAsStringAsync()) : null;
     }
 }

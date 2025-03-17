@@ -33,6 +33,11 @@ public class ListingService : IListingService
         var response = new ListingResponse()
         {
             Id = result.Id,
+            CreatedAt = result.CreatedAt,
+            EndDate = result.EndDate,
+            TicketPrice = result.TicketPrice,
+            CurrentTicketCount = result.CurrentTicketCount,
+            MaxTicketCount = result.MaxTicketCount,
         };
         
         return HttpResult<ListingResponse>.Ok(response);
