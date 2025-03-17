@@ -20,6 +20,8 @@ builder.Services.AddDbContext<TicketContext>(options =>
 
 builder.Services.AddScoped<ITicketService, TicketService>();
 builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+builder.Services.AddHttpClient<IUserHttpService, UserHttpService>();
+builder.Services.AddHttpClient<IListingHttpService, ListingHttpService>();
 
 var app = builder.Build();
 

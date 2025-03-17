@@ -21,4 +21,11 @@ public class ListingController
     {
         return await _service.GetAllListingsAsync();
     }
+    
+    [HttpGet]
+    [Route("/api/v1/listings/{listingId}")]
+    public async Task<HttpResult<ListingResponse>> GetListingByIdAsync([FromRoute] Guid listingId)
+    {
+        return await _service.GetListingByIdAsync(listingId);
+    }
 }

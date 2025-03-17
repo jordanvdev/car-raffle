@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
-using car_raffle_listing_data.EF_Models;
 
-namespace car_raffle_listing_data.Model;
+namespace car_raffle_ticket_data.Models;
 
 public class ListingResponse
 {
@@ -35,13 +34,5 @@ public class ListingResponse
     public ListingResponse()
     {
         
-    }
-
-    public ListingResponse(Listing listing)
-    {
-        Id = listing.Id;
-        CreatedAt = listing.CreatedAt;
-        CurrentTicketCount = listing.CurrentTicketCount;
-        MaxTicketCount = listing.MaxTicketCount;
     }
 }

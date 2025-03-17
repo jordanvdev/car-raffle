@@ -13,7 +13,7 @@ public class ListingContext : DbContext
 
     }
     
-    public DbSet<Listing> Listings { get; set; }
+    public DbSet<Listing?> Listings { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {

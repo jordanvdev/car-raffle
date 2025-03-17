@@ -17,7 +17,7 @@ public class UserContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        options.UseSqlServer("Server=localhost; Database=car-raffle-ticket; User Id=SA; Password=reallyStrongPwd123; Trust Server Certificate=True;");
+        options.UseSqlServer("Server=localhost; Database=car-raffle-user    ; User Id=SA; Password=reallyStrongPwd123; Trust Server Certificate=True;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

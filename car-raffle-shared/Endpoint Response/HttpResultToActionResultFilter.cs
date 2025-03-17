@@ -17,7 +17,7 @@ public class HttpResultToActionResultFilter : ActionFilterAttribute
         
         context.Result = httpResult.StatusCode switch
         {
-            HttpStatusCode.OK => new OkObjectResult(new { Result = httpResult.Result }),
+            HttpStatusCode.OK => new OkObjectResult(httpResult.Result),
             HttpStatusCode.BadRequest => new BadRequestObjectResult(httpResult.Error),
             HttpStatusCode.Unauthorized => new UnauthorizedObjectResult(httpResult.Error),
             HttpStatusCode.Forbidden => new ObjectResult(httpResult.Error)
